@@ -1,13 +1,13 @@
 package com.memil.memilog.repository;
 
 import com.memil.memilog.domain.Post;
+import com.memil.memilog.domain.QPost;
 import com.memil.memilog.request.PostSearch;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
-import static com.memil.memilog.domain.QPost.post;
 
 @RequiredArgsConstructor
 public class PostRepositoryImpl implements PostRepositoryCustom {
@@ -16,10 +16,10 @@ public class PostRepositoryImpl implements PostRepositoryCustom {
 
     @Override
     public List<Post> getList(PostSearch postSearch) {
-        return jpaQueryFactory.selectFrom(post)
+        return jpaQueryFactory.selectFrom(QPost.post)
                 .limit(postSearch.getSize())
                 .offset(postSearch.getOffset())
-                .orderBy(post.id.desc())
+                .orderBy(QPost.post.id.desc())
                 .fetch();
     }
 }

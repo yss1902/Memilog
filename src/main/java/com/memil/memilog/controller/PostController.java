@@ -1,9 +1,10 @@
 package com.memil.memilog.controller;
 
+import com.memil.memilog.config.data.UserSession;
 import com.memil.memilog.request.PostCreate;
 import com.memil.memilog.request.PostEdit;
-import com.memil.memilog.request.PostResponse;
 import com.memil.memilog.request.PostSearch;
+import com.memil.memilog.response.PostResponse;
 import com.memil.memilog.service.PostService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,11 @@ import java.util.List;
 public class PostController {
 
     private final PostService postService;
+
+    @GetMapping("/foo")
+    public String foo(UserSession userSession){
+        return "foo";
+    }
 
     @PostMapping("/posts")
     public void post(@RequestBody @Valid PostCreate request) {

@@ -6,8 +6,8 @@ import com.memil.memilog.exception.PostNotFound;
 import com.memil.memilog.repository.PostRepository;
 import com.memil.memilog.request.PostCreate;
 import com.memil.memilog.request.PostEdit;
-import com.memil.memilog.request.PostResponse;
 import com.memil.memilog.request.PostSearch;
+import com.memil.memilog.response.PostResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -70,4 +70,3 @@ public class PostService {
         postRepository.delete(post);
     }
 }
-

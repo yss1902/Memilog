@@ -9,7 +9,6 @@ import static java.lang.Math.min;
 
 @Getter
 @Setter
-
 @Builder
 public class PostSearch {
 
