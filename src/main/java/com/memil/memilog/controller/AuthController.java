@@ -1,15 +1,24 @@
 package com.memil.memilog.controller;
 
+import com.memil.memilog.config.AppConfig;
 import com.memil.memilog.request.Login;
+import com.memil.memilog.request.Signup;
+import com.memil.memilog.response.SessionResponse;
+import com.memil.memilog.service.AuthService;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.crypto.SecretKey;
+import java.util.Date;
+
 @Slf4j
-@RequiredArgsConstructor
 @RestController
+@RequiredArgsConstructor
 public class AuthController {
 
     private final AuthService authService;
@@ -36,3 +45,4 @@ public class AuthController {
     }
 
 }
+

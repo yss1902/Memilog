@@ -35,7 +35,7 @@ public class ExceptionController {
 
     @ResponseBody
     @ExceptionHandler(MemilogException.class)
-    public ResponseEntity<ErrorResponse> memilogException(MemilogException e) {
+    public ResponseEntity<ErrorResponse> hodologException(MemilogException e) {
         int statusCode = e.getStatusCode();
 
         ErrorResponse body = ErrorResponse.builder()
@@ -48,4 +48,7 @@ public class ExceptionController {
                 .body(body);
     }
 }
+
+
+
 

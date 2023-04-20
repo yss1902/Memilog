@@ -1,8 +1,9 @@
-### 테스트 요청
+### 로그인
+
 POST http://localhost:8080/auth/login
 Content-Type: application/json
 
 {
-  "email": "yss1902@gmail.com",
+  "email": "test@gmail.com",
   "password": "1234"
 }
